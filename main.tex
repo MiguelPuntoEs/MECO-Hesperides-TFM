@@ -1,4 +1,5 @@
-% LTeX: language=es-ES
+% !TeX root = main.tex
+% LTeX: language=es
 \documentclass[titlepage, 12pt]{article}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{booktabs}
@@ -63,7 +64,7 @@ En los últimos años, en el mundo académico se han utilizado enfoques teórico
 
 Por lo tanto, un análisis empírico como el que se presentará en este trabajo puede llevar a conclusiones relevantes sobre la posibilidad de utilizar las variaciones de los agregados monetarios y de la velocidad del dinero para establecer un vínculo con la inflación. Se utiliza un modelo de cambio de régimen (\textit{Markov-switching model}) para comprobar el impacto de las magnitudes monetarias (cambios en la oferta monetaria y en la velocidad del dinero) sobre la inflación para Suiza, Japón, Estados Unidos, la Eurozona y el Reino Unido.
 
-El hecho de que se utilicen distintas zonas monetarias para el presente análisis permite un estudio multirregional y multidivisa de las relaciones entre los agregados monetarios, la velocidad del dinero y la inflación.
+El hecho de que se utilicen distintas zonas monetarias para el presente análisis permite un estudio multi-regional y multidivisa de las relaciones entre los agregados monetarios, la velocidad del dinero y la inflación.
 
 Del análisis realizado para todas las áreas monetarias mencionadas se derivan principalmente dos conclusiones relevantes: primero, los cambios en la velocidad de circulación del dinero son estacionarios presentando un valor medio negativo y relativamente uniforme entre estas, con una variación similar; segundo, los cambios en la oferta monetaria en sentido amplio presentes y pasados son significativos a la hora de explicar cambios en el nivel de precios de las diferentes áreas monetarias.
 
@@ -111,9 +112,9 @@ A raíz de la implementación de una política monetaria expansiva en diferentes
 
 Precisamente la influencia en los cambios en la oferta monetaria y los diferentes mecanismos de transmisión monetaria han sido el foco de estudio de una abundante cantidad de publicaciones, especialmente en los autores denominados monetaristas, comenzando por la ya clásica publicación de \cite{friedman1956}.
 
-En los últimos años, sin embargo, y a raiz de la inflación resultante tras la política monetaria adoptada por los principales bancos centrales en relación a la crisis del COVID-19, se ha estudiado intensivamente la relación entre los cambios en la oferta monetaria y la inflación. Ejemplo de ello es el trabajo de \cite{borio2023}, donde se establece tal relación con una aproximación similar a la de este trabajo contemplando dos regímenes: un régimen de baja inflación y un régimen de alta inflación. Nótese, sin embargo, que la constatación de esta relación no implica causalidad: se observa que los países con un crecimiento de la oferta monetaria más fuerte registraron tasas de inflación más altas.
+En los últimos años, sin embargo, y a raíz de la inflación resultante tras la política monetaria adoptada por los principales bancos centrales en relación a la crisis del COVID-19, se ha estudiado intensivamente la relación entre los cambios en la oferta monetaria y la inflación. Ejemplo de ello es el trabajo de \cite{borio2023}, donde se establece tal relación con una aproximación similar a la de este trabajo contemplando dos regímenes: un régimen de baja inflación y un régimen de alta inflación. Nótese, sin embargo, que la constatación de esta relación no implica causalidad: se observa que los países con un crecimiento de la oferta monetaria más fuerte registraron tasas de inflación más altas.
 
-Por otro lado, \cite{greenwood2021} distingue entre dos tipos de explicaciones para la inflación: las explicaciones ad-hoc y las explicaciones monetarias. Se pone en duda la capacidad de explicación de algunas de estas explicaciones ad-hoc tales como el consenso neo-keynesiano tras haber fracasado en la correcta predicción de resultados de inflación, mientras que se resalta la importancia de los cambios en la oferta de dinero en sentido amplio en su relación con la inflación.
+Por otro lado, \cite{greenwood2021} distingue entre dos tipos de explicaciones para la inflación: las explicaciones \textit{ad-hoc} y las explicaciones monetarias. Se pone en duda la capacidad de explicación de algunas de estas explicaciones \textit{ad-hoc} tales como el consenso neo-keynesiano tras haber fracasado en la correcta predicción de resultados de inflación, mientras que se resalta la importancia de los cambios en la oferta de dinero en sentido amplio en su relación con la inflación.
 
 \cite{reynard2023}, por su parte, estudia la respuesta de los diferentes bancos centrales en términos de variación de sus respectivos balances y la inflación registrada. Se propone una relación entre inflación y oferta monetaria en sentido amplio usando como marco teórico la teoría cuantitativa del dinero. Se indica, asimismo, la importancia de la elección del agregado monetario a tratar, proponiendo el uso de agregados monetarios amplios.
 
@@ -121,9 +122,9 @@ En relación a esta última cuestión, \cite{bordo2021} concluye que el multipli
 
 Es por ello por lo que se plantea la cuestión relativa a las limitaciones de las herramientas de las que disponen los bancos centrales para diseñar la política monetaria. A este respecto, \cite{congdon2021} analiza estas limitaciones para diseñar e implementar herramientas concretas de política monetaria sin conllevar inflación asociada.
 
-Desde el punto de vista de metodología cuantitativa, una de las publicaciones que han explorado esta cuestión recientemente ha sido el de Castañeda y Cendejas, que «evalúa si los cambios en la velocidad de circulación del dinero y el crecimiento monetario (ampliamente) definido explica patrones de inflación a largo plazo en los Estados Unidos» \autocite[2]{castaneda2023}, concluyendo que, en efecto, ambas magnitudes sí tienen relevancia a la hora de explicar la inflación en el largo plazo.
+Desde el punto de vista de metodología cuantitativa, una de las publicaciones que han explorado esta cuestión recientemente ha sido el de Castañeda y Cendejas, que \enquote{evalúa si los cambios en la velocidad de circulación del dinero y el crecimiento monetario (ampliamente) definido explica patrones de inflación a largo plazo en los Estados Unidos} \autocite[2]{castaneda2023}, concluyendo que, en efecto, ambas magnitudes sí tienen relevancia a la hora de explicar la inflación en el largo plazo.
 
-La aplicación de metodologías cuantitativas para explicar la relación entre la oferta monetaria y la inflación ha sido profusa: a modo de ejemplo, \cite{amisano2013} usan un modelo markoviano con cambio de régimen similar al usado por Castañeda y Cendejas. Del mismo modo que se pretende en este trabajo, se expone la utilización del modelo para diferentes economías, siendo en ese caso la Eurozona, Alemania, los Estados Unidos, el Reino Unido y Canadá para un período de tiempo desde los 1960s hasta ese momento. Además, \cite{anderson2017} expone análisis similares a los de este trabajo correspondientes a la velocidad de circulación del dinero en términos de estacionariedad, y se usan modelos empíricos con el fin de modelar la demanda de dinero en sentido amplio en los Estados Unidos desde la Gran Depresión.
+La aplicación de metodologías cuantitativas para explicar la relación entre la oferta monetaria y la inflación ha sido profusa: a modo de ejemplo, \cite{amisano2013} usan un modelo markoviano con cambio de régimen similar al usado por Castañeda y Cendejas. Del mismo modo que se pretende en este trabajo, se expone la utilización del modelo para diferentes economías, siendo en ese caso la Eurozona, Alemania, los Estados Unidos, el Reino Unido y Canadá para un período de tiempo desde la década de 1960 hasta ese momento. Además, \cite{anderson2017} expone análisis similares a los de este trabajo correspondientes a la velocidad de circulación del dinero en términos de estacionariedad, y se usan modelos empíricos con el fin de modelar la demanda de dinero en sentido amplio en los Estados Unidos desde la Gran Depresión.
 
 \subsection{La cuestión de los agregados monetarios}
 
@@ -135,7 +136,7 @@ Una de las cuestiones clave en torno al monetarismo es respectiva a la elección
     \item \textbf{M3 o dinero en sentido amplio:} suma de M2, cesiones temporales (\textit{repurchase agreements}), participaciones en fondos del mercado monetario (\textit{money market fund shares/units}) y títulos de deuda de hasta dos años (\textit{debt securities}).
 \end{itemize}
 
-Debido al hecho de que cada agregado monetario tiene un tamaño diferente y una relación diferentes con diversas variables macroeconómicas, el mecanismo de transmisión monetaria no puede ser el mismo. De hecho, que la causalidad entre el exceso o el defecto de dinero y las decisiones de gasto y de portfolio de activos se cumple para el dinero en sentido amplio pero no para el dinero en sentido estrecho.  \autocite[137]{congdon2024}. Es por ello que en el presente trabajo se toman los agregados monetarios correspondientes al dinero en sentido amplio como medida de oferta monetaria.
+Debido al hecho de que cada agregado monetario tiene un tamaño diferente y una relación diferentes con diversas variables macroeconómicas, el mecanismo de transmisión monetaria no puede ser el mismo. De hecho, que la causalidad entre el exceso o el defecto de dinero y las decisiones de gasto y de portafolio de activos se cumple para el dinero en sentido amplio, pero no para el dinero en sentido estrecho.  \autocite[137]{congdon2024}. Es por ello que en el presente trabajo se toman los agregados monetarios correspondientes al dinero en sentido amplio como medida de oferta monetaria.
 
 \newpage
 \begin{figure}
@@ -190,7 +191,7 @@ El presente trabajo pretende evaluar si los cambios en la velocidad de circulaci
 
 De este modo se presenta un estudio controlado en diferentes economías a nivel mundial de la influencia de los cambios en la velocidad de circulación de dinero y los agregados monetarios amplios (\enquote{broad money}) en el índice de precios al consumidor (CPI).
 
-Para conseguir este fin se usará la metodología cuantitativa presentada en Castañeda y Cendejas (2022), extendiendo el análisis desde únicamente los Estados Unidos hasta otras economías que han presentado un diferente comportamiento en términos de implementación de política monetaria y de inflación registrada: la Eurozona, el Reino Unido, Suiza y Japón.
+Para conseguir este fin se usará la metodología cuantitativa presentada en \autocite{castaneda2023}, extendiendo el análisis desde únicamente los Estados Unidos hasta otras economías que han presentado un diferente comportamiento en términos de implementación de política monetaria y de inflación registrada: la Eurozona, el Reino Unido, Suiza y Japón.
 
 El período de tiempo de análisis se escoge de acuerdo al máximo alcanzable con la disponibilidad de los datos correspondientes a las tres magnitudes de análisis (agregados monetarios amplios, PIB nominal y tasa de inflación) para las cinco áreas monetarias de interés.
 
