@@ -1,11 +1,10 @@
 % !TeX root = main.tex
-% LTeX: language=es
 \documentclass[titlepage, 12pt]{article}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{booktabs}
 \usepackage[style=spanish]{csquotes}
 \usepackage[T1]{fontenc}
-\usepackage[spanish]{babel}
+\usepackage[main=spanish]{babel}
 \usepackage{setspace}
 \usepackage[a4paper, total={6in, 9.5in}]{geometry}
 \usepackage[title]{appendix}
@@ -17,9 +16,31 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{amsmath}
-\bibliography{bibliography.bib}
+\usepackage[acronym,nonumberlist]{glossaries}
+\makeglossaries
 
-\title{Teoría cuantitativa del dinero alrededor del mundo: oferta monetaria e inflación}
+\newacronym{adf}{ADF}{\textit{Augmented Dickey-Fuller}}
+\newacronym{bce}{BCE}{Banco Central Europeo}
+\newacronym{boe}{BoE}{Banco de Inglaterra}
+\newacronym{boj}{BoJ}{Banco de Japón}
+\newacronym{cpi}{CPI}{\textit{Consumer Price Index}}
+\newacronym{hicp}{HICP}{\textit{Harmonised Index of Consumer Prices}}
+\newacronym{iofc}{IOFC}{\textit{Intermediate other financial corporation}}
+\newacronym{kpss}{KPSS}{Kwiatkowski-Phillips-Schmidt-Shin}
+\newacronym{mmt}{MMT}{\textit{Modern Monetary Theory}}
+\newacronym{mpc}{MPC}{Comité de Política Monetaria}
+\newacronym{nber}{NBER}{\textit{National Bureau of Economic Research}}
+\newacronym{ofc}{OFC}{\textit{Other financial corporation}}
+\newacronym{oiofc}{OIOFC}{\textit{Other intermediate other financial corporation}}
+\newacronym{pib}{PIB}{Producto Interior Bruto}
+\newacronym{qe}{QE}{\textit{Quantitative Easing}}
+\newacronym{snb}{SNB}{\textit{Schweizerische Nationalbank}}
+\newacronym{sebc}{SEBC}{Sistema Europeo de Bancos Centrales}
+\newacronym{tfeu}{TFEU}{\textit{Treaty on the Functioning of the European Union}}
+\newacronym{tecg}{TECG}{\textit{Tratado de Estabilidad, Coordinación y Gobernanza en la Unión Económica y Monetaria}}
+
+\bibliography{bibliography.bib}
+\title{Teoría cuantitativa del dinero en el mundo: oferta monetaria e inflación}
 \author{Miguel González Calvo}
 \date{Septiembre 2024}
 \makeatletter
@@ -57,49 +78,37 @@
 \listoftables
 
 \newpage
-\section*{Resumen}
-Las diversas políticas monetarias adoptadas por los principales bancos centrales tuvieron efectos diferentes sobre la inflación durante la pandemia de COVID-19 y, especialmente, después de ella. Mientras que algunos países como Suiza y Japón registraron tasas de inflación anuales moderadas por debajo del 3,5\% (medidas por sus respectivos Índices de Precios al Consumo), no ocurrió lo mismo en otras zonas monetarias como Estados Unidos, la zona euro o el Reino Unido.
-
-En los últimos años, en el mundo académico se han utilizado enfoques teóricos para explicar los orígenes de la inflación, entre ellos la teoría cuantitativa del dinero, el nuevo marco keynesiano, la teoría monetaria moderna y la teoría fiscal del nivel de precios. Dado que los principales bancos de las áreas monetarias y países mencionados aplicaron políticas con notables diferencias en términos de agregados monetarios amplios correlacionadas con resultados de inflación diversos, la teoría cuantitativa \enquote{amplia} del dinero puede ser un marco teórico adecuado para analizar el efecto de los agregados monetarios amplios sobre la inflación.
-
-Por lo tanto, un análisis empírico como el que se presentará en este trabajo puede llevar a conclusiones relevantes sobre la posibilidad de utilizar las variaciones de los agregados monetarios y de la velocidad del dinero para establecer un vínculo con la inflación. Se utiliza un modelo de cambio de régimen (\textit{Markov-switching model}) para comprobar el impacto de las magnitudes monetarias (cambios en la oferta monetaria y en la velocidad del dinero) sobre la inflación para Suiza, Japón, Estados Unidos, la Eurozona y el Reino Unido.
-
-El hecho de que se utilicen distintas zonas monetarias para el presente análisis permite un estudio multi-regional y multidivisa de las relaciones entre los agregados monetarios, la velocidad del dinero y la inflación.
-
-Del análisis realizado para todas las áreas monetarias mencionadas se derivan principalmente dos conclusiones relevantes: primero, los cambios en la velocidad de circulación del dinero son estacionarios presentando un valor medio negativo y relativamente uniforme entre estas, con una variación similar; segundo, los cambios en la oferta monetaria en sentido amplio presentes y pasados son significativos a la hora de explicar cambios en el nivel de precios de las diferentes áreas monetarias.
+\input{resumen.tex}
+\newpage
+\input{abstract.tex}
 
 \newpage
-\section*{Abstract}
-Diverse monetary policies taken by leading central banks did have different effects on inflation during and especially after the COVID-19 pandemic. While certain countries such as Switzerland and Japan registered moderate annual inflation rates under 3.5\% (as measured by their respective Consumer Price Index), that was not the case for other monetary areas such as the United States, the Eurozone, or the United Kingdom.
-
-In the last years, theoretical approaches have been used in academia to explain the origins of inflation, including the quantity theory of money, the new Keynesian framework, the modern monetary theory, and the fiscal theory of the price level. Since the leading banks from the aforementioned monetary areas and countries implemented policies with remarkable differences in terms of broad money aggregates correlating with diverse inflation results, the \enquote{broad} quantitative theory of money can be a suitable theoretical framework to analyze the effect of broad monetary aggregates on inflation.
-
-Therefore, an empirical analysis such as the one to be presented in this publication can lead to relevant conclusions about the possibility of using changes in monetary aggregates and money velocity in order to establish a link to inflation. A regime-switching model (Markov-switching model) is used to test the impact of the monetary variables (changes in money quantity and money velocity) on inflation for Switzerland, Japan, the United States, the Eurozone, and the United Kingdom.
-
-The fact that different monetary areas are used for the present analysis allows for a multi-region, multi-currency study of relationships between monetary aggregates, money velocity, and inflation.
-
-From the analysis carried out for all the monetary areas mentioned above, two main conclusions are relevant: first, changes in the velocity of money circulation are stationary and have a negative and relatively uniform mean value among them, with a relatively similar variation among them; second, present and past changes in the broad money supply are significant in explaining changes in the price level of the different monetary areas.
-
-\newpage
-\input{siglas.tex}
+\printglossary[type=acronym]
 
 \newpage
 \pagenumbering{arabic}
+
 \section{Introducción}
 Las elevadas tasas de inflación que han seguido a las diversas respuestas de diferentes bancos centrales a la crisis del COVID-19 plantean la cuestión acerca de si el marco teórico que manejan bancos centrales en diversas economías mundiales son acertados a la hora de predecir la inflación en función de la implementación concreta de la política monetaria por parte de los mismos.
 
 Jerome Powell, el 23 de febrero de 2021, respondiendo al senador republicano de los Estados Unidos en el \enquote{Semiannual Monetary Policy Report to the Congress} ante el \textit{Committee on Banking, Housing, and Urban Affairs}:
 \begin{displayquote}
-    Well, when you and I studied economics a million years ago, M2 and monetary aggregates generally seemed to have a relationship to economic growth… that classic relationship between monetary aggregates and economic growth and the size of the economy, it just no longer holds… so something we have to unlearn, I guess. \autocite{powell2021a}.
+    \begin{otherlanguage}{english}
+        Well, when you and I studied economics a million years ago, M2 and monetary aggregates generally seemed to have a relationship to economic growth… that classic relationship between monetary aggregates and economic growth and the size of the economy, it just no longer holds… so something we have to unlearn, I guess. \autocite{powell2021a}.
+    \end{otherlanguage}
 \end{displayquote}
 Además, el 1 de diciembre del mismo año añadía ante el \textit{House of Representatives’ Committee of Financial Services}:
 \begin{displayquote}
-    Now, we think more of just the imbalances between supply and demand in the real economy rather than monetary aggregates. … It’s been a different economy and a different financial system for some time,” \autocite{powell2021b}.
+    \begin{otherlanguage}{english}
+        Now, we think more of just the imbalances between supply and demand in the real economy rather than monetary aggregates. … It’s been a different economy and a different financial system for some time,” \autocite{powell2021b}.
+    \end{otherlanguage}
 \end{displayquote}
 
 Milton Friedman, por el contrario, ya planteaba décadas atrás la ya célebre tesis contraria:
 \begin{displayquote}
-    Inflation is always and everywhere a monetary phenomenon, in the sense that it is and can be produced only by a more rapid increase in the quantity of money than in output. \autocite[24]{friedman1970}.
+    \begin{otherlanguage}{english}
+        Inflation is always and everywhere a monetary phenomenon, in the sense that it is and can be produced only by a more rapid increase in the quantity of money than in output. \autocite[24]{friedman1970}.
+    \end{otherlanguage}
 \end{displayquote}
 
 Se plantea la exploración, por tanto, de alternativas a dichos marcos teóricos con el fin de descubrir relaciones causales significativas entre los cambios en la velocidad de circulación del dinero y agregados monetarios, y la inflación registrada en diferentes áreas monetarias a nivel mundial.
@@ -112,13 +121,13 @@ A raíz de la implementación de una política monetaria expansiva en diferentes
 
 Precisamente la influencia en los cambios en la oferta monetaria y los diferentes mecanismos de transmisión monetaria han sido el foco de estudio de una abundante cantidad de publicaciones, especialmente en los autores denominados monetaristas, comenzando por la ya clásica publicación de \cite{friedman1956}.
 
-En los últimos años, sin embargo, y a raíz de la inflación resultante tras la política monetaria adoptada por los principales bancos centrales en relación a la crisis del COVID-19, se ha estudiado intensivamente la relación entre los cambios en la oferta monetaria y la inflación. Ejemplo de ello es el trabajo de \cite{borio2023}, donde se establece tal relación con una aproximación similar a la de este trabajo contemplando dos regímenes: un régimen de baja inflación y un régimen de alta inflación. Nótese, sin embargo, que la constatación de esta relación no implica causalidad: se observa que los países con un crecimiento de la oferta monetaria más fuerte registraron tasas de inflación más altas.
+En los últimos años, sin embargo, y a raíz de la inflación resultante tras la política monetaria adoptada por los principales bancos centrales en relación con la crisis del COVID-19, se ha estudiado intensivamente la relación entre los cambios en la oferta monetaria y la inflación. Ejemplo de ello es el trabajo de \cite{borio2023}, donde se establece tal relación con una aproximación similar a la de este trabajo contemplando dos regímenes: un régimen de baja inflación y un régimen de alta inflación. Nótese, sin embargo, que la constatación de esta relación no implica causalidad: se observa que los países con un crecimiento de la oferta monetaria más fuerte registraron tasas de inflación más altas.
 
 Por otro lado, \cite{greenwood2021} distingue entre dos tipos de explicaciones para la inflación: las explicaciones \textit{ad-hoc} y las explicaciones monetarias. Se pone en duda la capacidad de explicación de algunas de estas explicaciones \textit{ad-hoc} tales como el consenso neo-keynesiano tras haber fracasado en la correcta predicción de resultados de inflación, mientras que se resalta la importancia de los cambios en la oferta de dinero en sentido amplio en su relación con la inflación.
 
 \cite{reynard2023}, por su parte, estudia la respuesta de los diferentes bancos centrales en términos de variación de sus respectivos balances y la inflación registrada. Se propone una relación entre inflación y oferta monetaria en sentido amplio usando como marco teórico la teoría cuantitativa del dinero. Se indica, asimismo, la importancia de la elección del agregado monetario a tratar, proponiendo el uso de agregados monetarios amplios.
 
-En relación a esta última cuestión, \cite{bordo2021} concluye que el multiplicador de la base monetaria no es estable comparando los agregados MB y M2 así como las consecuencias relativas a la inflación. Además, se hace un recorrido histórico de diferentes episodios de expansión fiscal y se analizan los resultados de las mismas en términos de cambio en el nivel de precios.
+Con relación a esta última cuestión, \cite{bordo2021} concluye que el multiplicador de la base monetaria no es estable comparando los agregados MB y M2 así como las consecuencias relativas a la inflación. Además, se hace un recorrido histórico de diferentes episodios de expansión fiscal y se analizan los resultados de las mismas en términos de cambio en el nivel de precios.
 
 Es por ello por lo que se plantea la cuestión relativa a las limitaciones de las herramientas de las que disponen los bancos centrales para diseñar la política monetaria. A este respecto, \cite{congdon2021} analiza estas limitaciones para diseñar e implementar herramientas concretas de política monetaria sin conllevar inflación asociada.
 
@@ -151,37 +160,39 @@ Nótese, además, y tal como muestra \cite[76]{bordo2021}, que la relación entr
 Es de especial interés el trato de los importes correspondientes a la compensación interbancaria. Los bancos almacenan reservas de dinero con el fin de destinarlas a potenciales compensaciones en el mercado interbancario. Ahora bien, estos pagos son de carácter puramente financiero; dado que no se realizan intercambios de bienes ni de servicios con estos importes, no tienen un efecto en la demanda agregada:
 
 \begin{displayquote}
-    Such reserves, which are fully convertible into legal tender, do constitute ‘money’ for the banking industry, but only for it. Interbank settlement is largely for the purpose of matching up accounts and is purely financial in character. No goods and services, and no payments for factors of production, are involved, and no effect on the expenditure-output flow or aggregate demand follow interbank settlement. \autocite[41]{congdon2024}
+    \begin{otherlanguage}{english}
+        Such reserves, which are fully convertible into legal tender, do constitute ‘money’ for the banking industry, but only for it. Interbank settlement is largely for the purpose of matching up accounts and is purely financial in character. No goods and services, and no payments for factors of production, are involved, and no effect on the expenditure-output flow or aggregate demand follow interbank settlement. \autocite[41]{congdon2024}
+    \end{otherlanguage}
 \end{displayquote}
 
-De tal modo, M4 incluye el dinero en sentido amplio (\textit{broad money}), mientras que M4x se corresponde con el dinero en sentido amplio excluyendo las IOFC \autocite[41]{congdon2024}. Por ello en el caso del Reino Unido se usará M4x como agregado monetario para el análisis expuesto.
+De tal modo, M4 incluye el dinero en sentido amplio (\textit{broad money}), mientras que M4x se corresponde con el dinero en sentido amplio excluyendo las \acrfull{iofc} \autocite[41]{congdon2024}. Por ello en el caso del Reino Unido se usará M4x como agregado monetario para el análisis expuesto.
 
 \subsection{Teorías alternativas}
 
 La inflación ha sido un fenómeno harto estudiado en el campo de la economía política. No obstante, no existe un consenso sobre qué variables impactan en la misma; es por ello que a lo largo de los siglos han ido surgiendo corrientes económicas que la han atribuido a diferentes factores. Así como el monetarismo otorga un papel esencial a la hora de explicar la inflación a la oferta de dinero, no es así en otra serie de teorías alternativas que en este trabajo se pretenden esbozar.
 
 \subsubsection{Modelo Neokeynesiano}\label{modelo-neokeynesiano}
-La determinación de la política monetaria a implementar por parte de los bancos centrales de diferentes economías ha sido fruto de numerosos debates a lo largo de los últimos años. A partir de esta cuestión han surgido reglas monetarias tales como la Regla de Taylor, y diferentes perspectivas en función de qué hipótesis se toman como punto de partida. Algunas de estas hipótesis tienen íntima relación con el pensamiento de John Maynard Keynes, y precisamente por incorporación de elementos tales como la rigidez de precios nominales u otro tipo de rigideces (a modo de ejemplo en la demanda de dinero), se denomina tales enfoques como una «perspectiva neokeynesiana» \autocite[1662]{clarida1999}.
+La determinación de la política monetaria a implementar por parte de los bancos centrales de diferentes economías ha sido fruto de numerosos debates a lo largo de los últimos años. A partir de esta cuestión han surgido reglas monetarias tales como la Regla de Taylor, y diferentes perspectivas en función de qué hipótesis se toman como punto de partida. Algunas de estas hipótesis tienen una cierta relación con el pensamiento de John Maynard Keynes, y precisamente por la incorporación de elementos tales como la rigidez de precios nominales u otro tipo de rigideces (a modo de ejemplo en la demanda de dinero), se denomina tales enfoques como una \enquote{perspectiva neokeynesiana} \autocite[1662]{clarida1999}.
 
-Uno de los modelos más destacables en la «perspectiva neokeynesiana» es el presentado precisamente por Richard Clarida, Jordi Galí y Mark Gertler (1999). En este, se relaciona la inflación con dos factores determinantes, a saber: las expectativas de inflación y el output gap o brecha de producción (la diferencia entre la producción potencial y la producción real). De este modo, no se establece, al igual que en el modelo planteado en este trabajo, una relación directa entre la implementación de política monetaria en forma de variación de la oferta de dinero y la inflación registrada, sino que esta se atribuye a otros factores determinantes.
+Uno de los modelos más destacables en la \enquote{perspectiva neokeynesiana} es el presentado precisamente por Richard Clarida, Jordi Galí y Mark Gertler (1999). En este, se relaciona la inflación con dos factores determinantes, a saber: las expectativas de inflación y el \enquote{\textit{output gap}} o brecha de producción (la diferencia entre la producción potencial y la producción real). De este modo, no se establece, al igual que en el modelo planteado en este trabajo, una relación directa entre la implementación de política monetaria en forma de variación de la oferta de dinero y la inflación registrada, sino que esta se atribuye a otros factores determinantes.
 
 \subsubsection{Teoría fiscal del nivel de precios}
 Una de las cuestiones esenciales de la teoría monetaria es explicar la razón por la cual existe confianza en el dinero fiat por contraposición al dinero con convertibilidad en activos reales, y una de las explicaciones más aceptadas en la comunidad académica es la chartalista: por la capacidad del dinero fiat de extinguir deudas con el Estado. Tal como expone \cite{ben_gad2023}, es este principio el que da lugar a dos corrientes que convergen en este punto y divergen en las explicaciones particulares, a saber: la teoría monetaria moderna y la teoría fiscal del nivel de precios.
 
-Uno de los máximos exponentes de la teoría fiscal del nivel de precios es John H. Cochrane, que expone en el libro homónimo \textit{The Fiscal Theory of the Price Level} \autocite*{cochrane2023} los principios de la misma, que pueden resumirse en que el valor de la moneda fiat depende fundamentalmente de los flujos de caja esperados por parte del Estado, esto es, del conjunto de déficits o superávits esperados futuros del mismo. De este modo, la inflación no es considerada un fenómeno puramente monetario, sino que depende del pasivo estatal: «inflation is not a monetary phenomenon but rather a government liability phenomenon» \autocite[305]{ben_gad2023}.
+Uno de los máximos exponentes de la teoría fiscal del nivel de precios es John H. Cochrane, que expone en el libro homónimo \textit{The Fiscal Theory of the Price Level} \autocite*{cochrane2023} los principios de la misma, que pueden resumirse en que el valor de la moneda fiat depende fundamentalmente de los flujos de caja esperados por parte del Estado, esto es, del conjunto de déficits o superávits esperados futuros del mismo. De este modo, la inflación no es considerada un fenómeno puramente monetario, sino que depende del pasivo estatal: \enquote{inflation is not a monetary phenomenon but rather a government liability phenomenon} \autocite[305]{ben_gad2023}.
 
 \subsubsection{Teoría monetaria moderna}
-La teoría monetaria moderna es una teoría alternativa al monetarismo correspondiente al reconocimiento del Estado como monopolio de emisión de dinero, y sus ideas pueden resumirse en dos tesis principales \autocite{rallo2015}: primero, que en presencia de recursos ociosos el Estado tiene la posibilidad de usar la oferta de moneda sin producirse efectos perniciosos para la economía o inflación; y segundo, que el dinero es una criatura del Estado. Es necesaria, por ello, la constatación del íntimo vínculo entre la teoría monetaria moderna y el chartalismo, y, más en concreto, el neochartalismo (recuérdese la célebre afirmación de Georg Friedrich Knapp \enquote{el dinero es una criatura de la ley}).
+La \acrfull{mmt} es una teoría alternativa al monetarismo correspondiente al reconocimiento del Estado como monopolio de emisión de dinero, y sus ideas pueden resumirse en dos tesis principales \autocite{rallo2015}: primero, que en presencia de recursos ociosos el Estado tiene la posibilidad de usar la oferta de moneda sin producirse efectos perniciosos para la economía o inflación; y segundo, que el dinero es una criatura del Estado. Es necesaria, por ello, la constatación del íntimo vínculo entre la teoría monetaria moderna y el chartalismo, y, más en concreto, el neochartalismo (recuérdese la célebre afirmación de Georg Friedrich Knapp \enquote{el dinero es una criatura de la ley}).
 
 En concreto, el autoproclamado fundador de la teoría monetaria moderna, Warren Mosler, en Los siete fraudes inocentes capitales de la política económica (2010) expone siete fraudes de la política económica y la contraparte explicación usando la teoría correspondiente, basados en el principio fundamental de monopolio público:
 
 \begin{displayquote}
-    MMT alone recognizes that the US Government and its agents, including its regulated commercial banks, are the sole supplier of that which it demands for payment of taxes \autocite{mosler2020}
+    \acrshort{mmt} alone recognizes that the US Government and its agents, including its regulated commercial banks, are the sole supplier of that which it demands for payment of taxes \autocite{mosler2020}
 \end{displayquote}
 
 Y siguiendo la teoría propuesta, se alcanza uno de los corolarios más importantes: el emisor de una moneda no puede enfrentarse a limitaciones de carácter financiero. Tal como exponen William Mitchell, Randall Wray, L y Martin Watts (2019): \enquote{put simply, a country that issues its own currency can never run out and can never become insolvent in its own currency}.
 
-Dejando a un lado las consecuencias para el desempleo y otros aspectos económicos, es de interés para este trabajo exponer sucintamente las consecuencias derivadas para la inflación: según la teoría monetaria moderna de acuerdo a las exposiciones de \cite{mitchell2019} y \cite{kelton2020}, la financiación de tipo monetaria del gasto público no ha de causar inflación, siempre y cuando la economía tenga recursos ociosos donde destinar este gasto.
+Dejando a un lado las consecuencias para el desempleo y otros aspectos económicos, es de interés para este trabajo exponer sucintamente las consecuencias derivadas para la inflación: según la teoría monetaria moderna de acuerdo con las exposiciones de \cite{mitchell2019} y \cite{kelton2020}, la financiación de tipo monetaria del gasto público no ha de causar inflación, siempre y cuando la economía tenga recursos ociosos donde destinar este gasto.
 
 No obstante, la evidencia empírica no sustenta esta tesis, sino que la monetización de deuda a través de un incremento excesivo de la oferta monetaria con respecto al nivel específico de demanda de dinero resulta empíricamente en inflación. Es destacable, en este aspecto, el trabajo de \cite{castaneda2021}, explicando por qué la teoría monetaria moderna no puede proveer crecimiento económico sostenido y baja inflación.
 
@@ -189,11 +200,11 @@ No obstante, la evidencia empírica no sustenta esta tesis, sino que la monetiza
 \subsection{Análisis cuantitativo}
 El presente trabajo pretende evaluar si los cambios en la velocidad de circulación del dinero y en la cantidad de dinero (en forma de agregados monetarios concretos) tienen impacto en la inflación a largo plazo usando datos de diferentes áreas monetarias.
 
-De este modo se presenta un estudio controlado en diferentes economías a nivel mundial de la influencia de los cambios en la velocidad de circulación de dinero y los agregados monetarios amplios (\enquote{broad money}) en el índice de precios al consumidor (CPI).
+De este modo se presenta un estudio controlado en diferentes economías a nivel mundial de la influencia de los cambios en la velocidad de circulación de dinero y los agregados monetarios amplios (\enquote{broad money}) en el \acrfull{cpi}.
 
 Para conseguir este fin se usará la metodología cuantitativa presentada en \autocite{castaneda2023}, extendiendo el análisis desde únicamente los Estados Unidos hasta otras economías que han presentado un diferente comportamiento en términos de implementación de política monetaria y de inflación registrada: la Eurozona, el Reino Unido, Suiza y Japón.
 
-El período de tiempo de análisis se escoge de acuerdo al máximo alcanzable con la disponibilidad de los datos correspondientes a las tres magnitudes de análisis (agregados monetarios amplios, PIB nominal y tasa de inflación) para las cinco áreas monetarias de interés.
+El período de tiempo de análisis se escoge de acuerdo con el máximo alcanzable con la disponibilidad de los datos correspondientes a las tres magnitudes de análisis (agregados monetarios amplios, PIB nominal y tasa de inflación) para las cinco áreas monetarias de interés.
 
 \subsubsection{Variables y datos utilizados}
 Se disponen de las magnitudes correspondientes a los diferentes agregados monetarios, así como al producto interior bruto nominal. Así, usando la ecuación de intercambio es posible calcular la velocidad de circulación del dinero para la moneda correspondiente:
@@ -225,7 +236,7 @@ Los datos concretos utilizados para el estudio empírico y sus correspondientes 
 
 Una de las conclusiones observadas por el análisis de \cite{castaneda2023} es el comportamiento estacionario de los cambios en la velocidad de circulación del dinero para el período observado en los Estados Unidos: aunque hay cambios significativos en la misma, se caracteriza por producirse recurrentemente una regresión a la media, explicándose porque “los valores de $\Delta\log{\left(P_tY_t\right)}$ y $\Delta\log{M_t}$ no siguen trayectorias divergentes por períodos de tiempo excesivamente largos” \autocite[8]{castaneda2023}. Así, la media a la que se regresa puede interpretarse como una situación de equilibrio económico y situaciones de desequilibrio (entre el crecimiento del PIB nominal y el crecimiento de la cantidad de dinero) cuando los cambios en la velocidad de circulación del dinero se alejan de la misma.
 
-Una de las críticas más repetidas a lo largo de los últimos años al monetarismo corresponde a cambios significativos en la demanda de dinero, especialmente en las últimas décadas. Es por ello que se decide realizar un estudio de estacionariedad respecto a los cambios en la velocidad de circulación del dinero no sólo en los Estados Unidos, sino en las otras áreas monetarias de interés. Nótese, además, que la velocidad de circulación del dinero es inversamente proporcional a la demanda de dinero y puede tomarse como variable «proxy» para determinar su variación.
+Una de las críticas más repetidas a lo largo de los últimos años al monetarismo corresponde a cambios significativos en la demanda de dinero, especialmente en las últimas décadas. Es por ello que se decide realizar un estudio de estacionariedad respecto a los cambios en la velocidad de circulación del dinero no sólo en los Estados Unidos, sino en las otras áreas monetarias de interés. Nótese, además, que la velocidad de circulación del dinero es inversamente proporcional a la demanda de dinero y puede tomarse como variable \enquote{proxy} para determinar su variación.
 
 Se observa, asimismo, que los cambios en la velocidad de circulación del dinero no exhiben una media nula, sino que se distribuyen en torno a un valor medio $\mu_v$. Es por esto que se realizará un contraste de hipótesis para verificar que ese valor medio en efecto no es nula, planteándose:
 
@@ -364,11 +375,11 @@ Los datos correspondientes a los períodos de expansión y recesión económica 
         2019Q4 & 2020Q2 \\
         \bottomrule
     \end{tabular}
-    \caption{Períodos de expansión y recesión económica de acuerdo al National Bureau of Economic Reserach \autocite{nber2023}.}
+    \caption{Períodos de expansión y recesión económica de acuerdo con el National Bureau of Economic Reserach \autocite{nber2023}.}
 \end{table}
 
 \subsubsection{Inflación}
-Se toman como variables exógenas las variables de interés, así como los retrasos de las mismas. Con el fin de simplificar la notación se usará el operador «lag» ($L$) de este modo:
+Se toman como variables exógenas las variables de interés, así como los retrasos de las mismas. Con el fin de simplificar la notación se usará el operador \enquote{lag} ($L$) de este modo:
 
 \begin{equation}
     L^mx_t=x_{t-m}
@@ -390,14 +401,14 @@ Y otras dos expresiones polinómicas (correspondientes a los $k\in\{1,2\}$ regí
     \label{eq:markov-cpi}
 \end{equation}
 
-
+\newpage
 \section{Discusión y conclusiones}
 
 \subsection{Marco institucional}
 Desde las instituciones de las diferentes áreas monetarias se establecen marcos regulatorios que persiguen el mandato de la estabilidad de precios, así como marcar límites al endeudamiento público.
 
 \subsubsection{Estados Unidos}
-La estabilidad de precios se recoge como objetivo a perseguir en el «mandato plural» de la Reserva Federal, autoridad monetaria en los Estados Unidos.
+La estabilidad de precios se recoge como objetivo a perseguir en el \enquote{mandato plural} de la Reserva Federal, autoridad monetaria en los Estados Unidos.
 
 Este mandato está regulado por las enmiendas del 16 de noviembre de 1977 (12 USC § 225a) a la Ley de la Reserva Federal de 1913. En este caso se trata de una ley del Congreso de los Estados Unidos que establece como objetivos de la Reserva Federal \enquote{el máximo empleo, precios estables, y tipos de interés de largo plazo moderados}. Por ello la Reserva Federal, para conseguir garantizar un nivel estable de precios, se esfuerza por mantener la inflación baja y estable, normalmente apuntando a una tasa de inflación anual de alrededor del dos por ciento.
 
@@ -411,14 +422,15 @@ Además, existen restricciones y directrices informales para el gasto deficitari
 
 La legislación europea en términos de estabilidad de precios es compleja y está recogida en diferentes tratados firmados por los Estados miembros \autocite{lemos2023} y establece tanto un mandato general como condiciones específicas para los diferentes bancos centrales y para los gobiernos nacionales.
 
-La estabilidad de precios se establece como mandato en el Tratado de Maastricht y posteriormente se consolidó en el Artículo 127 (1) del Tratado de Funcionamiento de la Unión Europea (parte tercera, título VIII, capítulo 2): \enquote{El objetivo principal del Sistema Europeo de Bancos Centrales, denominado en lo sucesivo «SEBC», será mantener la estabilidad de precios. Sin perjuicio de este objetivo, el SEBC apoyará las políticas económicas generales de la Unión con el fin de contribuir a la realización de los objetivos de la Unión establecidos en el artículo 3 del Tratado de la Unión Europea.}.
+La estabilidad de precios se establece como mandato en el Tratado de Maastricht y posteriormente se consolidó en el Artículo 127 (1) del Tratado de Funcionamiento de la Unión Europea (parte tercera, título VIII, capítulo 2): \enquote{El objetivo principal del \acrfull{sebc}, denominado en lo sucesivo \enquote{SEBC}, será mantener la estabilidad de precios. Sin perjuicio de este objetivo, el \acrshort{sebc} apoyará las políticas económicas generales de la Unión con el fin de contribuir a la realización de los objetivos de la Unión establecidos en el artículo 3 del Tratado de la Unión Europea.}.
 
-La estabilidad de precios también se recoge en el Artículo 140 del Tratado de Funcionamiento de la Unión Europea (TFEU por sus siglas en inglés – \textit{Treaty on the Functioning of the European Union}): \enquote{el logro de un alto grado de estabilidad de precios, que deberá quedar de manifiesto a través de una tasa de inflación que esté próxima a la de, como máximo, los tres Estados miembros más eficaces en cuanto a la estabilidad de precios}. Además, indirectamente en el mismo artículo a través de los tipos de cambio requiriendo \enquote{el respeto, durante dos años como mínimo, sin que se haya producido devaluación frente al euro, de los márgenes normales de fluctuación que establece el mecanismo de tipos de cambio del sistema monetario europeo}, así como \enquote{el carácter duradero de la convergencia conseguida por el Estado miembro acogido a una excepción y de su participación en el mecanismo de tipos de cambio deberá verse reflejado en los niveles de tipos de interés a largo plazo}.
+La estabilidad de precios también se recoge en el Artículo 140 del \acrfull{tfeu}: \enquote{el logro de un alto grado de estabilidad de precios, que deberá quedar de manifiesto a través de una tasa de inflación que esté próxima a la de, como máximo, los tres Estados miembros más eficaces en cuanto a la estabilidad de precios}. Además, indirectamente en el mismo artículo a través de los tipos de cambio requiriendo \enquote{el respeto, durante dos años como mínimo, sin que se haya producido devaluación frente al euro, de los márgenes normales de fluctuación que establece el mecanismo de tipos de cambio del sistema monetario europeo}, así como \enquote{el carácter duradero de la convergencia conseguida por el Estado miembro acogido a una excepción y de su participación en el mecanismo de tipos de cambio deberá verse reflejado en los niveles de tipos de interés a largo plazo}.
 
-Sin embargo, no sólo se fijan condiciones relativas al banco central y a la emisión monetaria, sino también condiciones relativas al gobierno a través de la limitación del déficit público en el mismo artículo 140 del TFEU: \enquote{las finanzas públicas deberán encontrarse en una situación sostenible, lo que quedará demostrado en caso de haberse conseguido una situación del presupuesto sin un déficit público excesivo, definido de conformidad con lo dispuesto en el apartado 6 del artículo 126}.
+Sin embargo, no sólo se fijan condiciones relativas al banco central y a la emisión monetaria, sino también condiciones relativas al gobierno a través de la limitación del déficit público en el mismo artículo 140 del \acrshort{tfeu}: \enquote{las finanzas públicas deberán encontrarse en una situación sostenible, lo que quedará demostrado en caso de haberse conseguido una situación del presupuesto sin un déficit público excesivo, definido de conformidad con lo dispuesto en el apartado 6 del artículo 126}.
 
-Posteriormente, a principios de 2013 entra en vigor el Tratado de Estabilidad, Coordinación y Gobernanza en la Unión Económica y Monetaria (TECG) que, en su Pacto Presupuestario firmado por todos los Estados miembros excepto el Reino Unido y la República Checa, establece un límite mínimo estructural del 0,5 \% del PIB, con la salvedad de Estados con una deuda pública inferior al 60 \% del PIB, cuyo límite inferior sería del 1 \% del PIB.
-En cuanto a la estrategia de la política monetaria del Banco Central Europeo, esta viene dada por la «Declaración sobre la estrategia de política monetaria del BCE», publicada el 8 de julio de 2021 y sustituyendo a la anteriormente publicada en el año 2003. Así, se establece el HCIP como indicador a evaluar:
+Posteriormente, a principios de 2013 entra en vigor el \acrfull{tecg} que, en su Pacto Presupuestario firmado por todos los Estados miembros excepto el Reino Unido y la República Checa, establece un límite mínimo estructural del 0,5 \% del \acrshort{pib}, con la salvedad de Estados con una deuda pública inferior al 60 \% del \acrshort{pib}, cuyo límite inferior sería del 1 \% del \acrshort{pib}.
+
+En cuanto a la estrategia de la política monetaria del \acrfull{bce}, esta viene dada por la \enquote{Declaración sobre la estrategia de política monetaria del \acrshort{bce}}, publicada el 8 de julio de 2021 y sustituyendo a la anteriormente publicada en el año 2003. Así, se establece el HCIP como indicador a evaluar:
 
 \begin{displayquote}
     El Consejo de Gobierno confirma que el Índice Armonizado de Precios de Consumo (IAPC) continúa siendo el indicador de precios adecuado para evaluar la consecución del objetivo de estabilidad de precios. \autocite{ecb2021}.
@@ -426,29 +438,31 @@ En cuanto a la estrategia de la política monetaria del Banco Central Europeo, e
 
 Y se establece un límite a la inflación:
 \begin{displayquote}
-    El BCE se ha comprometido a fijar su política monetaria para asegurar que la inflación se estabilice en su objetivo del 2 \% a medio plazo. \autocite{ecb2021}.
+    El \acrshort{bce} se ha comprometido a fijar su política monetaria para asegurar que la inflación se estabilice en su objetivo del 2 \% a medio plazo. \autocite{ecb2021}.
 \end{displayquote}
 
 \subsubsection{Reino Unido}
 
-En el Reino Unido el Banco de Inglaterra (BoE, \textit{Bank of England}) fija la política monetaria para \enquote{mantener la inflación en el Reino Unido baja y estable} \autocite{boe}. Para ello, el Banco de Inglaterra hace uso de dos herramientas para implementar la política monetaria: por un lado se usa el \textit{bank rate}, que es el tipo de interés que el Banco paga en depósitos diarios por entidades admitidas tales como bancos comerciales; por otro se contempla la compra de activos financieros tales como bonos a través de la expansión cuantitativa (QE, \textit{Quantitative Easing}).
+En el Reino Unido el \acrfull{boe} fija la política monetaria para \enquote{mantener la inflación en el Reino Unido baja y estable} \autocite{boe}. Para ello, el \acrlong{boe} hace uso de dos herramientas para implementar la política monetaria: por un lado se usa el \textit{bank rate}, que es el tipo de interés que el Banco paga en depósitos diarios por entidades admitidas tales como bancos comerciales; por otro se contempla la compra de activos financieros tales como bonos a través de la expansión cuantitativa, \acrfull{qe}.
 
-De acuerdo al Banco, la inflación es \enquote{el objetivo primario de la política monetaria}, de tal modo que se persigue el objetivo que se le entrega al BoE desde el gobierno del Reino Unido (en la actualidad el objetivo está fijado en un dos por ciento).
+De acuerdo con el Banco, la inflación es \enquote{el objetivo primario de la política monetaria}, de tal modo que se persigue el objetivo que se le entrega al \acrshort{boe} desde el gobierno del Reino Unido (en la actualidad el objetivo está fijado en un dos por ciento).
 
-La decisión correspondiente a la política monetaria a implementarse corresponde, por tanto, a nueve individuos que pertenecen al Comité de Política Monetaria (MPC, \textit{Montetary Policy Committee}), que anuncian la política a adoptar ocho veces al año.
+La decisión correspondiente a la política monetaria a implementarse corresponde, por tanto, a nueve individuos que pertenecen al \acrfull{mpc}, que anuncian la política a adoptar ocho veces al año.
 
 Para una visión crítica correspondiente a la política monetaria adoptada por parte del Banco de Inglaterra puede consultarse el capítulo noveno de \textit{The Quantity Theory of Money: A New Restatement} \autocite[109-129]{congdon2024}.
 
+Es de interés señalar una de las principales diferencias entre la arquitectura institucional del Banco de Inglaterra y la de la Reserva Federal o del Banco Central Europeo: mientras que estas dos últimas instituciones son responsables de fijar sus propios objetivos de inflación, el Banco de Inglaterra no es autónomo en estos términos, sino que el objetivo de inflación es comunicado por el gobierno al propio banco.
+
 \subsubsection{Suiza}
 
-El Banco Nacional Suizo (SNB) recibe el mandato de asegurar la estabilidad de precios tomando en consideración la evolución económica. A fin de alcanzar este objetivo, la estrategia de política moentaria del SNB se compone de tres elementos, a saber: la definición de estabilidad de precios, la previsión de inflación a medio plazo, y la definición del tipo de interés oficial del SNB \autocite{snb2024a}.
+El \acrfull{snb} recibe el mandato de asegurar la estabilidad de precios tomando en consideración la evolución económica. A fin de alcanzar este objetivo, la estrategia de política moentaria del \acrshort{snb} se compone de tres elementos, a saber: la definición de estabilidad de precios, la previsión de inflación a medio plazo, y la definición del tipo de interés oficial del SNB \autocite{snb2024a}.
 
-La descripción de los instrumentos de política monetaria de los que dispone el SNB están descritos en las \enquote{Guidelines of the Swiss National Bank on monetary policy instrument} \autocite{snb2024b}.
+La descripción de los instrumentos de política monetaria de los que dispone el \acrshort{snb} están descritos en las \enquote{Guidelines of the Swiss National Bank on monetary policy instrument} \autocite{snb2024b}.
 
 \subsubsection{Japón}
-El Banco de Japón (BoJ) toma las decisiones correspondientes a la política monetaria y se encarga de implementarla con el fin de mantener la estabilidad de precios \autocite{boj2024a}.
+El \acrfull{boj} toma las decisiones correspondientes a la política monetaria y se encarga de implementarla con el fin de mantener la estabilidad de precios \autocite{boj2024a}.
 
-El marco institucional establece a través del \enquote{Bank of Japan Act} que la política monetaria debe estar «encaminada a lograr la estabilidad de precios, contribuyendo así al sano desarrollo de la economía nacional». En concreto, el Banco de Japón fija como objetivo un \enquote{objetivo de estabilidad de precios} establecido en 2013 por el mismo en un dos por ciento de cambio anual en el índice de precios al consumidor (CPI).
+El marco institucional establece a través del \enquote{Bank of Japan Act} que la política monetaria debe estar \enquote{encaminada a lograr la estabilidad de precios, contribuyendo así al sano desarrollo de la economía nacional}. En concreto, el Banco de Japón fija como objetivo un \enquote{objetivo de estabilidad de precios} establecido en 2013 por el mismo en un dos por ciento de cambio anual en el índice de precios al consumidor (CPI).
 
 La política monetaria se define por parte de la \textit{Policy Board} en los \textit{Monetary Policy Meetings}, mientras que la implementación de la política monetaria se realiza a través de diferentes instrumentos operacionales tales como las operaciones del mercado monetario.
 
@@ -490,7 +504,7 @@ En primer lugar se analiza la tendencia, variabilidad y estacionariedad de la ve
         $\sigma_v$                 & 4.48           & 4.06     & 3.91    & 2.97        & 5.64    \\
         $\sigma_v$ (hasta 2019.IV) & 3.58           & 2.87     & 3.65    & 2.31        & 4.61    \\
         Valor-p                    & 0.002          & 0.000    & 0.001   & 0.000       & 0.000   \\
-        ADF valor-p                & 0.031          & 0.038    & 0.012   & 0.017       & 0.062   \\
+        \acrshort{adf} valor-p     & 0.031          & 0.038    & 0.012   & 0.017       & 0.062   \\
         \bottomrule
     \end{tabular}
     \caption{Parámetros obtenidos correspondientes a la velocidad de circulación del dinero para las diferentes áreas monetarias de interés}
@@ -501,9 +515,9 @@ Tal como muestra el Cuadro~\ref{tab:v-params}, la variación media ($\mu_v$) de 
 
 Además, la variabilidad (expresada como desviación estándar $\sigma_v$), también es uniforme entre áreas monetarias, con un intervalo de entre 2.87 y 4.61.
 
-Por último se analiza la estacionariedad de la serie temporal correspondiente a la variación del logaritmo de la velocidad de circulación. Para ello se hace uso del \textit{augmented Dickey-Fuller test} (ADF), donde como se explicó en la sección correspondiente, la hipótesis nula es la existencia de una raíz unitaria en la serie temporal. Tal como muestra el Cuadro~\ref{tab:v-params}, se rechaza la hipótesis nula al 90\% y se concluye que no existe una raíz unitaria y que la serie es estacionaria.
+Por último se analiza la estacionariedad de la serie temporal correspondiente a la variación del logaritmo de la velocidad de circulación. Para ello se hace uso del \acrfull{adf}, donde como se explicó en la sección correspondiente, la hipótesis nula es la existencia de una raíz unitaria en la serie temporal. Tal como muestra el Cuadro~\ref{tab:v-params}, se rechaza la hipótesis nula al 90\% y se concluye que no existe una raíz unitaria y que la serie es estacionaria.
 
-Se plantea como trabajo futuro hacer uso del \textit{Kwiatkowski-Phillips-Schmidt-Shin test} (KPSS) para confirmar la estacionariedad de la serie temporal.
+Se plantea como trabajo futuro hacer uso del \acrfull{kpss} para confirmar la estacionariedad de la serie temporal.
 
 \begin{figure}
     \centering
@@ -537,7 +551,7 @@ Se plantea como trabajo futuro hacer uso del \textit{Kwiatkowski-Phillips-Schmid
 
 \subsubsection{Modelización de la velocidad de circulación del dinero}
 
-De acuerdo a la teoría expuesta en la sección correspondiente, se modelan los cambios en la velocidad de circulación del dinero con un modelo de regresión markov con cambio de régimen. Tal como se especificó anteriormente, el modelo correspondiente a la variación del logaritmo de la velocidad de circulación del dinero se corresponde con la Ecuación~\ref{eq:markov-v}.
+De acuerdo con la teoría expuesta en la sección correspondiente, se modelan los cambios en la velocidad de circulación del dinero con un modelo de regresión markov con cambio de régimen. Tal como se especificó anteriormente, el modelo correspondiente a la variación del logaritmo de la velocidad de circulación del dinero se corresponde con la Ecuación~\ref{eq:markov-v}.
 
 
 \begin{table}
@@ -605,7 +619,7 @@ El coeficiente de determinación $R^2$ es una medida estadística que determina 
 
 \subsubsection{Modelización de la inflación}
 
-De acuerdo a la teoría expuesta en la sección correspondiente, se modela lla inflación con un modelo de regresión markov con cambio de régimen. Tal como se especificó anteriormente, el modelo correspondiente a la variación del logaritmo de la velocidad del nivel de precios $\Delta\log P_t$ se corresponde con la Ecuación~\ref{eq:markov-cpi}.
+De acuerdo con la teoría expuesta en la sección correspondiente, se modela lla inflación con un modelo de regresión markov con cambio de régimen. Tal como se especificó anteriormente, el modelo correspondiente a la variación del logaritmo de la velocidad del nivel de precios $\Delta\log P_t$ se corresponde con la Ecuación~\ref{eq:markov-cpi}.
 
 
 \begin{table}
@@ -651,7 +665,7 @@ De acuerdo a la teoría expuesta en la sección correspondiente, se modela lla i
 
 Los parámetros obtenidos en los diferentes modelos pueden se consultados en el Cuadro~\ref{tab:cpi-markov-params}. Los coeficientes son los correspondientes a la Ecuación~\ref{eq:markov-cpi}. La visualización del ajuste puede ser consultada en la Figura~\ref{fig:markov-cpi}.
 
-Es de interés resaltar que, de acuerdo al Cuadro~\ref{tab:cpi-markov-params}, los valores de cambio en la oferta monetaria de períodos anteriores son significativos a la hora de modelizar la inflación presente (véanse los valores p correspondientes). Además, todas las probabilidades de cambio de régimen son significativas al 90\%, con la excepción del $p_{10}$ en Suiza, que merece un estudio independiente.
+Es de interés resaltar que, de acuerdo con el Cuadro~\ref{tab:cpi-markov-params}, los valores de cambio en la oferta monetaria de períodos anteriores son significativos a la hora de modelizar la inflación presente (véanse los valores p correspondientes). Además, todas las probabilidades de cambio de régimen son significativas al 90\%, con la excepción del $p_{10}$ en Suiza, que merece un estudio independiente.
 
 Los valores del coeficiente de determinación $R^2$ permiten concluir que el modelo es capaz de explicar con precisión la inflación a través de los cambios presentes y pasados de la oferta monetaria, presentando valores de entre $0.789$ y $0.836$.
 
@@ -685,15 +699,15 @@ Los valores del coeficiente de determinación $R^2$ permiten concluir que el mod
     \label{fig:markov-cpi}
 \end{figure}
 
-
+\newpage
 \subsection{Conclusiones}
-El presente trabajo replica los resultados de la publicación correspondiente a \cite{castaneda2023}, donde se utilizan modelos similares de regresión de Markov. Este trabajo no sólo es capaz de replicar los resultados para el área monetaria de Estados Unidos, sino que también generaliza a modo de estudio controlado los resultados para otras monetarias de interés: la Eurozona, el Reino Unido, Suiza y Japón.
+El presente trabajo replica los resultados de la publicación correspondiente a \cite{castaneda2023}, donde se utilizan modelos similares de regresión de Markov. Este trabajo no sólo es capaz de replicar los resultados para el área monetaria de Estados Unidos, sino que también generaliza a modo de estudio controlado los resultados para otras áreas monetarias de interés: la Eurozona, el Reino Unido, Suiza y Japón.
 
-Tras el análisis empírico se concluye que los cambios en la oferta monetaria correspondiente a los agregados monetarios en sentido amplio explican una parte significativa de la variación en el nivel de precios (inflación). Además, se obtiene como resultado que no sólo es significativa para explicar la inflación los cambios en la oferta monetaria presente, sino también los cambios en la oferta monetaria pasada.
+Tras el análisis empírico se concluye que los cambios en la oferta monetaria correspondientes a los agregados monetarios en sentido amplio (M3 y M4x) explican una parte significativa de la variación en el nivel de precios (inflación). Además, se obtiene como resultado que no sólo son significativos los cambios en la oferta monetaria presente, sino también los cambios en la oferta monetaria pasada para determinar una correlación con la inflación.
 
-Es de especial relevancia este último resultado para el diseño y la implementación de la política monetaria por parte de los bancos centrales. Buena parte de los principales bancos centrales en todo el mundo han usado la teoría correspondiente al modelo neokeynesiano (cf. Sección~\ref{modelo-neokeynesiano}), donde se resaltan como variables de interés la brecha de la producción y las expectativas de inflación como significativas a la hora de explicar la inflación. Sin embargo, tal como se ha analizado ampliamente en este trabajo, los cambios en la oferta monetaria en sentido amplio son significativos para explicar la inflación.
+Es de especial relevancia este último resultado para el diseño y la implementación de la política monetaria por parte de los bancos centrales. Buena parte de los principales bancos centrales en todo el mundo han usado la teoría correspondiente al modelo neokeynesiano (cf. Sección~\ref{modelo-neokeynesiano}), donde se resaltan como variables de interés la brecha de la producción (\textit{output gap}) y las expectativas de inflación como variables explicativas de la inflación. Sin embargo, tal como se ha analizado ampliamente en este trabajo, los cambios en la oferta monetaria en sentido amplio son significativos para explicar la inflación y no han de ser omitidos en el análisis.
 
-Se concluye, por tanto, una recomendación a la banca dentral correspondiente a la incorporación de los agregados monetarios en sentido ampliio como variables de análisis para la predicción y el análisis de la inflación, así como un más profundo análisis y revisión de los mecanismos de transmisión monetaria.
+Se concluye, por tanto, una recomendación a la banca dentral correspondiente a la incorporación de los agregados monetarios en sentido amplio como variables explicativas para la predicción y el análisis de la inflación, así como un más profundo análisis y revisión de los mecanismos de transmisión monetaria.
 
 \nocite{*}
 \newpage
@@ -704,7 +718,14 @@ Se concluye, por tanto, una recomendación a la banca dentral correspondiente a 
     \input{fuentes.tex}
 \end{appendices}
 
+\newpage
 
+El presente Trabajo Fin de Máster ha sido elaborado por:
 
+\vspace{3cm}
+
+\textbf{Miguel González Calvo}
+
+Madrid, 14 de octubre de 2024.
 
 \end{document}
